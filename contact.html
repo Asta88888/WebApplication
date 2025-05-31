@@ -7,6 +7,64 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 </head>
 <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2 sidebar">
+                <h5>Меню</h5>
+                <hr class="border-2"/>
+                <h6>Главная</h6>
+                <h6>Категории</h6>
+                <h6>Заказы</h6>
+                <h6>Контакты</h6>
+                <hr class="border-2"/>
+                <div class="dropdown-center">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Пользователь
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Профиль</a></li>
+                        <li><a class="dropdown-item" href="#">Выход</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-10">
+                <h1>Контакты</h1>
 
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Имя</label>
+                            <input type="text" class="form-control" id="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Почта</label>
+                                <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1">@</span>
+                                <input type="email" class="form-control" id="email" aria-describedby="basic-addon1">
+                                </div>
+                        </div>
+                        <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Сообщение</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                        </div>
+                    </form>
+                    </div>
+                    <div class="col">
+                       <h5 class="fw-bold">Наши контакты</h5>
+                       <p class="text-muted">
+                       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                       Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                       </p>
+                       <p class="text-muted">
+                       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                       </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
