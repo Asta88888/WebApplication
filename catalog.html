@@ -12,16 +12,16 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-2 sidebar">
+            <div class="col-2 bg-dark text-white d-flex flex-column min-vh-100 p-3 sidebar">
                 <h5>Меню</h5>
                 <hr class="border-2"/>
-                <h6>Главная</h6>
-                <h6>Категории</h6>
-                <h6>Заказы</h6>
-                <h6>Контакты</h6>
+                <a href="index.html" class="text-white text-decoration-none mb-2">Главная</a>
+                <a href="catalog.html" class="text-white text-decoration-none mb-2">Каталог</a>
+                <a href="categories.html" class="text-white text-decoration-none mb-2">Категории</a>
+                <a href="contacts.html" class="text-white text-decoration-none mb-2">Контакты</a>
                 <hr class="border-2"/>
                 <div class="dropdown-center">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button class="btn btn-outline-light dropdown-toggle w-10" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Пользователь
                     </button>
                     <ul class="dropdown-menu">
@@ -30,10 +30,10 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-10">
-                <h1>Каталог</h1>
+            <div class="col-10 text-center">
+                <h1 class="mt-5">Каталог</h1>
 
-                  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3">
+                  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-3 mt-5">
                       <div class="col">
                           <div class="card" style="width: 18rem;">
                           <img src="..." class="card-img-top" alt="...">
@@ -94,6 +94,8 @@
             </div>
         </div>
     </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js">
+</script>
 </body>
 
 </html>
