@@ -1,11 +1,11 @@
-from http.server import BaseHTTPRequestHandler, HTTPServer
-
+from http.server import HTTPServer, SimpleHTTPRequestHandler
+from idlelib.run import MyRPCServer
 
 hostName = "localhost"
 serverPort = 8080
 
 
-class MyServer(BaseHTTPRequestHandler):
+class MyServer(SimpleHTTPRequestHandler):
     """Специальный класс, который отвечает за обработку входящих запросов от клиента"""
 
     def do_GET(self):
