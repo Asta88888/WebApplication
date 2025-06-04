@@ -1,5 +1,5 @@
 from http.server import HTTPServer, SimpleHTTPRequestHandler
-from idlelib.run import MyRPCServer
+
 
 hostName = "localhost"
 serverPort = 8080
@@ -10,12 +10,18 @@ class MyServer(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         """Метод для обработки входящих GET-запросов"""
-        with open("contact.html", "r", encoding="utf-8") as f:
-            html_content = f.read()
-        self.send_response(200)
-        self.send_header("Content-type", "text/html")
-        self.end_headers()
-        self.wfile.write(bytes(html_content, "utf-8"))
+        if self.path in ["/", "/contact.html"]:
+            try:
+                with open("contact.html", "r", encoding="utf-8") as f:
+                    html_content = f.read()
+                self.send_response(200)
+                self.send_header("Content-type", "text/html")
+                self.end_headers()
+                self.wfile.write(html_content.encode("utf-8"))
+            except FileNotFoundError:
+                self.send_error(404, "contact.html not found")
+        else:
+            super().do_GET()
 
 
     def do_POST(self):
@@ -29,7 +35,7 @@ class MyServer(SimpleHTTPRequestHandler):
 
 if __name__ == '__main__':
     webServer = HTTPServer((hostName, serverPort), MyServer)
-    print("Server started http://%s:%s" % (hostName, serverPort))
+    print(f"Server started: http://{hostName}:{serverPort}")
     try:
         webServer.serve_forever()
     except KeyboardInterrupt:
